@@ -13,6 +13,7 @@
 2. [Test Plan Structure](#test-plan-structure)
 3. [Thread Groups Summary](#thread-groups-summary)
 4. [Detailed Test Cases](#detailed-test-cases)
+Contains screenshots
    - [TC-001 · Login with Valid Credentials](#tc-001--login-with-valid-credentials)
    - [TC-002 · Login with Wrong Password](#tc-002--login-with-wrong-password)
    - [TC-003 · Fetch AI Agent Workflow](#tc-003--fetch-ai-agent-workflow)
@@ -137,6 +138,10 @@ After a successful login, the auth cookie is extracted from the `Set-Cookie` res
 
 The extracted value is referenced in the shared Header Manager as `Cookie: n8n-auth=${authCookie}`.
 
+### Results
+
+![tc01](screenshots/TC-001%20Login%20-%20Valid%20Credentials%20.png)
+
 ---
 
 ### TC-002 · Login with Wrong Password
@@ -160,6 +165,10 @@ The extracted value is referenced in the shared Header Manager as `Cookie: n8n-a
 | Assertion Name | Field | Expected |
 |---|---|---|
 | Assert 401 — Wrong Credentials | Response Code | `401` |
+
+### Results
+
+![tc02](screenshots/TC-002%20Login%20-%20Wrong%20Password.png)
 
 ---
 
@@ -188,6 +197,10 @@ The extracted value is referenced in the shared Header Manager as `Cookie: n8n-a
 
 > **Dependency:** This test case depends on TC-001 having run successfully and the `${authCookie}` variable being populated. It will fail with an authentication error if the login step failed or produced no cookie.
 
+### Results
+
+![tc03](screenshots/TC-003%20Fetch%20AI%20Agent%20Workflow.png)
+
 ---
 
 ### TC-004 · Fetch Workflows Without Session
@@ -213,6 +226,10 @@ The extracted value is referenced in the shared Header Manager as `Cookie: n8n-a
 | Assert No Data Leaked | Response Message | NOT Substring | `nodes` |
 
 > The second assertion uses a **NOT Contains** check to ensure that sensitive workflow node data does not appear in the error response body when a request is unauthenticated.
+
+### Results
+
+![tc04](screenshots/TC-004%20Fetch%20Workflows%20-%20No%20Session.png)
 
 ---
 
@@ -240,6 +257,10 @@ The extracted value is referenced in the shared Header Manager as `Cookie: n8n-a
 | Assert Contains Workflow ID | Response Data | Substring | `SmqM4KAYXK8F3FjD` |
 
 > **Dependency:** Relies on `${authCookie}` extracted in TC-001. The `limit=5` parameter ensures only the last 5 executions are returned.
+
+### Results
+
+![tc05](screenshots/TC-005%20Get%20Executions%20for%20Workflow.png)
 
 ---
 
@@ -273,15 +294,11 @@ The extracted value is referenced in the shared Header Manager as `Cookie: n8n-a
 |---|---|---|---|
 | Assert 200 — successful fetch | Response Code | Contains | `200` |
 
-#### Result Listener
+#### Results
 
-An **Aggregate Report** listener is attached to this group. It records, for each sampler:
+**Aggregate Report**
 
-- Sample count, error count, error percentage
-- Average, median, 90th/95th/99th percentile response times
-- Min / Max response times
-- Throughput (requests/second)
-- Received / Sent KB/s
+![tc06](screenshots/TC-006%20Load%20Test%20-%20Get%20Workflow.png)
 
 ---
 
