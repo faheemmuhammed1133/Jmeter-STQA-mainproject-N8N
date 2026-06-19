@@ -5,9 +5,11 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TC001 , TC003 , TC005 -- Authenticated Tests">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TC001 , TC003 , TC005 -- Authenticated Tests" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -24,7 +26,7 @@
           <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
         </CookieManager>
         <hashTree/>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager">
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Content-Type</stringProp>
@@ -57,7 +59,7 @@
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 -- Succesfull Login">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 -- Succesfull Login" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
             </collectionProp>
@@ -67,7 +69,7 @@
             <intProp name="Assertion.test_type">8</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Auth Cookie">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Extract Auth Cookie" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">authCookie</stringProp>
             <stringProp name="RegexExtractor.regex">n8n-auth=([^;]+)</stringProp>
@@ -132,7 +134,7 @@ ID and confirming that the response body contains the expected node names
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 - workflow check">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 - workflow check" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
             </collectionProp>
@@ -142,7 +144,7 @@ ID and confirming that the response body contains the expected node names
             <intProp name="Assertion.test_type">8</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains AI Agent">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains AI Agent" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="-1338855187">AI Agent</stringProp>
             </collectionProp>
@@ -152,7 +154,7 @@ ID and confirming that the response body contains the expected node names
             <intProp name="Assertion.test_type">2</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains Gemini Node">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains Gemini Node" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="599111941">Google Gemini Chat Model</stringProp>
             </collectionProp>
@@ -193,7 +195,7 @@ ID and confirming that the response body contains the expected node names
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 -- Workflow check">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 -- Workflow check" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
             </collectionProp>
@@ -203,7 +205,7 @@ ID and confirming that the response body contains the expected node names
             <intProp name="Assertion.test_type">8</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains Workflow ID">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert Contains Workflow ID" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="787038867">SmqM4KAYXK8F3FjD</stringProp>
             </collectionProp>
@@ -215,7 +217,7 @@ ID and confirming that the response body contains the expected node names
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TC002 -- Invalid Login Test">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TC002 -- Invalid Login Test" enabled="false">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -226,7 +228,7 @@ ID and confirming that the response body contains the expected node names
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager">
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Header Manager" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
               <stringProp name="Header.name">Content-Type</stringProp>
@@ -256,7 +258,7 @@ ID and confirming that the response body contains the expected node names
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 401 - Wrong Credentials">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 401 - Wrong Credentials" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="51509">401</stringProp>
             </collectionProp>
@@ -305,7 +307,7 @@ ID and confirming that the response body contains the expected node names
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TC004 -- Unauthorized Access Test">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="TC004 -- Unauthorized Access Test" enabled="false">
         <stringProp name="TestPlan.comments">Data leak is prevented , by preventing unauthorised acces </stringProp>
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
@@ -331,7 +333,7 @@ ID and confirming that the response body contains the expected node names
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 401 -- unauthorized access ">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 401 -- unauthorized access " enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="51509">401</stringProp>
             </collectionProp>
@@ -341,7 +343,7 @@ ID and confirming that the response body contains the expected node names
             <intProp name="Assertion.test_type">8</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert No Data Leaked">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert No Data Leaked" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="104993457">nodes</stringProp>
             </collectionProp>
@@ -402,7 +404,7 @@ ID and confirming that the response body contains the expected node names
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookie Manager - Load Test">
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookie Manager - Load Test" enabled="true">
           <collectionProp name="CookieManager.cookies">
             <elementProp name="n8n-auth" elementType="Cookie" testname="n8n-auth">
               <stringProp name="Cookie.value">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFlY2Y3NTY0LWMxYjItNGZjNy1iZmQ1LWVjYzE4NmM2ZmZiNiIsImhhc2giOiJPMk5wWE1mbk5PIiwidXNlZE1mYSI6ZmFsc2UsImlhdCI6MTc4MTgxNjY2OCwiZXhwIjoxNzgyNDIxNDY4fQ.BVD20H640cNhuATOlMFHiTYtOjOo8cf5_bgaYQU5WoM</stringProp>
@@ -432,7 +434,7 @@ ID and confirming that the response body contains the expected node names
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 -- succesfull fetch">
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Assert 200 -- succesfull fetch" enabled="true">
             <collectionProp name="Asserion.test_strings">
               <stringProp name="49586">200</stringProp>
             </collectionProp>
